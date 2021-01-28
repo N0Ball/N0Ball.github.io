@@ -1,0 +1,133 @@
+title: N0Ball 
+page-title: N0Ball's Blog.
+home-title: N0Ball
+description: 'Currently a nobody'
+keywords: 'N0Ball, CTF ,*'
+url: 'https://N0Ball.github.io'
+nav:
+  Home: /
+  Tags: /tags/
+  Timeline: /timeline/
+  About: /about/
+  reLink: /reLink/
+author: true
+name: Vincent
+NickName: N0Ball
+webtitle: N0Ball
+bio: Currently a Nobody QAQ
+about: false
+# use br tag for new line <br> and &\emsp for ｀Chinese space
+aboutyou: "Nobody QAQ"
+portraits: /assets/Profile.jpg
+honorificPrefix: '***'
+image: /assets/Profile.jpg
+familyname: Chiang
+honorificSuffix: 'ouo'
+disambiguatingDescription: '*'
+birthPlace: '*'
+birthDate: '*'
+height: '*'
+gender: 'male'
+memberOf: NCUGC, NCtfU
+nationality: Taiwan
+jobTitle: Nobody
+knowsAbout: little CTF
+knowsLanguage: 'Maderine, Taiwanese, English'
+worksFor:
+  type: LocalBusiness
+  name: ''
+  openingHours: 'Sa-Fr 09:00-21:00'
+  priceRange: $$$
+  telephone:
+    - +8801XXXXXXXX
+    - +8801XXXXXXXXX
+  image: 'https://i.imgur.com/BGBJWBq.png'
+  address:
+    type: PostalAddress
+    addressCountry: ''
+    addressLocality: ''
+    addressRegion: ''
+future: true
+SNS: true
+SNS-icon: #['Facebook', 'weibo', 'qq', 'github', 'Dribbble', 'Twitter', 'instagram', 'weixin', 'Codepen', 'Dribble', 'zhihu', 'juejin', 'twitch']
+  mail: 'https://telegram.me/No_ball'
+  github: 'https://github.com/N0Ball'
+permalink: '/blog/:title/'
+paginate: 4
+paginatepath:
+  - 'page:num'
+footer:
+  since: 2021
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+pygmentsTheme: default
+friends:
+disqus: false
+disqus_url: 'https://jonysblog.disqus.com/embed.js'
+livere: false
+livere_uid: MTAyMC8zNDI2OS8xMDgwNg==
+Gitment: false
+Gitment_owner: ''
+Gitment_repo: ''
+client_id: ''
+client_secret: ''
+social-share: false
+social-share-items:
+  - facebook
+  - twitter
+  - google
+  - linkedin
+  - diandian
+  - weibo
+  - qq
+  - wechat
+  - tencent
+  - douban
+  - qzone
+baidu: false
+baidu-url: ''
+google: false
+google-ID: <UA-42070905-2>
+color: 'rgb(154,133,255) rgb(255,90,90) rgb(255,210,32) rgb(98,170,255)'
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
+logo: /assets/banner.png
+twitter:
+  username: your_name
+  card: summary
+social:
+  name: your_name
+  links:
+    - 'mailto:yourname@example.com'
+    - 'https://github.com/example'
+    - 'https://codepen.io/example/#'
+    - 'https://twitter.com/@example'
+    - 'https://www.instagram.com/example/'
+    - 'https://facebook.com/example'
+    - 'https://plus.google.com/+example'
+webmaster_verifications:
+  google: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+exclude:
+  - screenshot
+  - node_modules
+  - vendor
+  - .travis.yml
+  - Gemfile
+  - Gemfile.lock
+  - GHOST.txt
+  - gulpfile.js
+  - package.json
+  - Rakefile
+  - README.md
+  - script.py
+  - changelog.md
+  - '*.Rmd'
+  - .git*
+  - package-lock.json
+  - gulpconfig.json

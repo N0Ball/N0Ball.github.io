@@ -1,0 +1,76 @@
+<!-- Post layout -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Introducing the head tag -->
+
+{% include head.html %}
+{% include androidColor.html %}
+
+</head>
+<body onload="loaderFunc()">
+{% include loader_body.html %}
+<!-- Top anchor -->
+<a id="htmlup" name="htmlup"></a>
+<!-- Introduce blog post options -->
+{% include post-header.html %}
+<!-- Introducing the mobile dropdown option -->
+{% include boot.html %}
+<!-- Introducing the blog post style -->
+{% include post-title.html %}
+<div class="markdown-body fadeInUp animated">
+  {% if page.subtitle %}
+    {% if page.color.size==0 or page.color==nil %}
+      <div class="postpage-subtitle" style="border-left: 8px solid #9A85FF; border-right: 8px solid #9A85FF;">
+        {{ page.subtitle }}
+      </div>
+    {% else %}
+      <div class="postpage-subtitle" style="border-left: 8px solid {{ page.color }}; border-right: 8px solid {{ page.color }}">
+        {{ page.subtitle }}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <!-- Article content -->
+  {{ page.content }}
+  <!-- Introducing the share module -->
+  {% include share.html %}
+</div>
+
+<!-- Bottom anchor -->
+<a id="htmldown" name="htmldown"></a>
+<!-- Introducing the comment module -->
+{% include comment.html %}
+<!-- Introducing the goto module -->
+{% include goto.html %}
+<!-- Introduce the module at the bottom of the page -->
+{% include footer.html %}
+
+<!-- Quote the animation effect of wow.js -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 600,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- Page refreshes back to top -->
+<script>
+    window.onbeforeunload = function(){
+        //The page automatically returns to the top after refreshing
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+
+<!-- preloder script -->
+<!-- end -->
+{% include new-window-fix.html %}
+{% include open-embed.html %}
+{% include loader_script.html %}
+</body>
+</html>
