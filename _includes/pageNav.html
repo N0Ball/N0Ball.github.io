@@ -6,7 +6,7 @@
     {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
             <a href="{{ "/" | relative_url }}" class="page-link" title="Previous Page">&laquo;</a>
-            {% else %}
+        {% else %}
             <a href="/page{{ paginator.previous_page }}/" class="page-link" title="Previous Page">&laquo;</a>
         {% endif %}
     {% endif %}
@@ -20,7 +20,7 @@
     {% endif %}
     {% if paginator.page == paginator.total_pages %}
       {% if paginator.total_pages == 1 %}
-        <a href="{{ "/" | relative_url }}" class="page-link" title="No Next">\</a>
+        <!--<a href="{{ "/" | relative_url }}" class="page-link" title="No Next">\</a>-->
       {% else %}
         <a href="/page{{ paginator.page }}" class="page-link" title="Final Page">{{ paginator.page }}</a>
       {% endif %}
