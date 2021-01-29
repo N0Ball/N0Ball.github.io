@@ -9,8 +9,8 @@
 
 {% include loader_head.html %}
 <!-- Favicon -->
-<link href="/assets/Profile.jpg" rel="shortcut icon" />
-<link href="/assets/Profile.jpg" rel="apple-touch-icon-precomposed" />
+<link href="/assets/icon.png" rel="shortcut icon" />
+<link href="/assets/icon.png" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
 <title>{{ page.title }}</title>
@@ -38,3 +38,10 @@ var _hmt = _hmt || [];
   gtag('config', '{{ google-ID }}');
 </script>
 {% endif %}
+
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>

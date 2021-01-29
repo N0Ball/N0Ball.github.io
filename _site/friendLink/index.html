@@ -5,9 +5,9 @@
 <!-- Introducing the head tag -->
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>友情链接 | №Ball</title>
+<title>Friend link | №Ball</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="友情链接" />
+<meta property="og:title" content="Friend link" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Currently a nobody" />
 <meta property="og:description" content="Currently a nobody" />
@@ -15,10 +15,10 @@
 <meta property="og:url" content="http://localhost:4000/friendLink/" />
 <meta property="og:site_name" content="№Ball" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="友情链接" />
+<meta property="twitter:title" content="Friend link" />
 <meta name="twitter:site" content="@your_name" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/friendLink/","description":"Currently a nobody","@type":"WebPage","headline":"友情链接","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/banner.png"}},"@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/friendLink/","description":"Currently a nobody","@type":"WebPage","headline":"Friend link","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/banner.png"}},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <script type="application/ld+json">
@@ -78,15 +78,22 @@
 <link rel="stylesheet" href="http://localhost:4000/assets/css/preloader.css">
 
 <!-- Favicon -->
-<link href="/assets/Profile.jpg" rel="shortcut icon" />
-<link href="/assets/Profile.jpg" rel="apple-touch-icon-precomposed" />
+<link href="/assets/icon.png" rel="shortcut icon" />
+<link href="/assets/icon.png" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
-<title>友情链接</title>
+<title>Friend link</title>
 <!-- Baidu statistics -->
 
 <!-- Google Analytics -->
 
+
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
 
 </head>
 <body onload="loaderFunc()">
@@ -167,6 +174,19 @@
         </li>
     </ul>
 </main>
+<script>
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" + katex.renderToString(tex) + "</span>";
+  });
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" + katex.renderToString("\\displaystyle "+tex) + "</div>";
+});
+</script>
 
 <footer id="bottom">
   <script src="/assets/css/bootstrap.min.css"></script>
@@ -224,12 +244,14 @@
 
   <br>
   <br>
-  <br>
-  <span>№Ball ©
+  <span style="float: right;">
+  №Ball ©
   
   
   2021
+  </span>
   <br>
+  <span style="float: right;">
   Powered by <a href="https://www.jekyll.com/">Jekyll</a> | <a href="https://github.com/JonyBepary/HardCandy-Jekyll-Mod">HardCandy-Jekyll Mod</a></span>
 </footer>
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -244,8 +266,6 @@
 <!-- font -->
 <link rel="stylesheet" href="/assets/css/font.css">
 <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
-
-
 
 
 <!-- Quote the animation effect of wow.js -->

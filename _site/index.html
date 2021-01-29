@@ -78,8 +78,8 @@
 <link rel="stylesheet" href="http://localhost:4000/assets/css/preloader.css">
 
 <!-- Favicon -->
-<link href="/assets/Profile.jpg" rel="shortcut icon" />
-<link href="/assets/Profile.jpg" rel="apple-touch-icon-precomposed" />
+<link href="/assets/icon.png" rel="shortcut icon" />
+<link href="/assets/icon.png" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
 <title></title>
@@ -87,6 +87,13 @@
 
 <!-- Google Analytics -->
 
+
+<!-- Load jQuery -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Load KaTeX -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
 
 </head>
 <body onload="loaderFunc()">
@@ -163,6 +170,31 @@
 
     <ul class="post-list">
       
+  <a href="/blog/Pwn-CTF/">
+      <li class="fadeInUp animated">
+          
+          <div class="post-cover" style="background:url(/assets/pwn-ctf/cover.png);background-size:cover;background-position:center;"></div>
+          
+          <section class="post-preview">
+              <h2 class="post-title">Pwn CTF Writeup</h2>
+              
+              <h3 class="post-subtitle">Pwn-CTF Writeup</h3>
+              
+              
+          </section>
+          <footer class="post-tags">
+                
+                    
+                    <a href=tags.html#CTF class="post-tag">CTF</a>
+                    
+                    <a href=tags.html#Writeup class="post-tag">Writeup</a>
+                    
+                
+                <time class="post-date" datetime="21-01-29">29 Jan 2021</time>
+          </footer>
+      </li>
+  </a>
+
   <a href="/blog/Welcome-to-My-Site/">
       <li class="fadeInUp animated">
           
@@ -198,13 +230,26 @@
     
     
       
-        <!--<a href="/" class="page-link" title="No Next">\</a>-->
+        <a href="/" class="page-link" title="No Next">\</a>
       
     
   </div>
 
 </nav>
 
+<script>
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" + katex.renderToString(tex) + "</span>";
+  });
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" + katex.renderToString("\\displaystyle "+tex) + "</div>";
+});
+</script>
 
 <footer id="bottom">
   <script src="/assets/css/bootstrap.min.css"></script>
@@ -258,12 +303,14 @@
 
   <br>
   <br>
-  <br>
-  <span>№Ball ©
+  <span style="float: right;">
+  №Ball ©
   
   
   2021
+  </span>
   <br>
+  <span style="float: right;">
   Powered by <a href="https://www.jekyll.com/">Jekyll</a> | <a href="https://github.com/JonyBepary/HardCandy-Jekyll-Mod">HardCandy-Jekyll Mod</a></span>
 </footer>
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -278,7 +325,6 @@
 <!-- font -->
 <link rel="stylesheet" href="/assets/css/font.css">
 <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
-
 
 
 

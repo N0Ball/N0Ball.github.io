@@ -1,17 +1,32 @@
+<script>
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" + katex.renderToString(tex) + "</span>";
+  });
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" + katex.renderToString("\\displaystyle "+tex) + "</div>";
+});
+</script>
 
 <footer id="bottom">
   {% include breadcrumbs.html %}
   <br>
   <br>
-  <br>
-  <span>{{ site.title }} ©
+  <span style="float: right;">
+  {{ site.title }} ©
   {% assign current = "now" | date: "%Y" | plus: 0%}
   {% unless site.footer.since and site.footer.since == current %}
     {{ site.footer.since }}
     -
   {% endunless %}
   {{ current }}
+  </span>
   <br>
+  <span style="float: right;">
   Powered by <a href="https://www.jekyll.com/">Jekyll</a> | <a href="https://github.com/JonyBepary/HardCandy-Jekyll-Mod">HardCandy-Jekyll Mod</a></span>
 </footer>
 {% include script.html %}

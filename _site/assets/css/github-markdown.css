@@ -801,3 +801,8 @@
     font-size: 12px;
   }
 }
+
+.notify {
+  color: rgb(175, 0, 0);
+  margin:5%;
+}
