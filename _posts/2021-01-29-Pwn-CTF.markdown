@@ -77,10 +77,10 @@ def cal():
   }
   ```
 
-- `<main>` 的 stack長度 < `gets` 能輸入的長度
+- `<main>` 的 stack長度 $\gt$ `gets` 能輸入的長度
     ![](/assets/pwn-ctf/go-home/discription-0.png)
 
-\* 0x20 < $$\infty$$ (gets 輸入長度沒有限制)
+\* $\color{red}{\text{0x20} \lt \infty}$ (gets 輸入長度沒有限制)
 {: .notify}
 
 ## Solution

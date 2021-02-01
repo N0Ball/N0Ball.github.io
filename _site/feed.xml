@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-01T17:41:08+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">№Ball</title><subtitle>Currently a nobody</subtitle><author><name>true</name></author><entry><title type="html">Pwn CTF Writeup</title><link href="http://localhost:4000/blog/Pwn-CTF/" rel="alternate" type="text/html" title="Pwn CTF Writeup" /><published>2021-01-29T14:41:44+08:00</published><updated>2021-01-29T14:41:44+08:00</updated><id>http://localhost:4000/blog/Pwn-CTF</id><content type="html" xml:base="http://localhost:4000/blog/Pwn-CTF/">&lt;dl&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-01T18:21:59+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">№Ball</title><subtitle>Currently a nobody</subtitle><author><name>true</name></author><entry><title type="html">Pwn CTF Writeup</title><link href="http://localhost:4000/blog/Pwn-CTF/" rel="alternate" type="text/html" title="Pwn CTF Writeup" /><published>2021-01-29T14:41:44+08:00</published><updated>2021-01-29T14:41:44+08:00</updated><id>http://localhost:4000/blog/Pwn-CTF</id><content type="html" xml:base="http://localhost:4000/blog/Pwn-CTF/">&lt;dl&gt;
   &lt;dt&gt;&lt;strong&gt;Intro：&lt;/strong&gt;&lt;/dt&gt;
   &lt;dd&gt;一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ&lt;/dd&gt;
   &lt;dd&gt;由於過了一段時間，所以題目順序就～隨性&lt;/dd&gt;
@@ -76,12 +76,12 @@ Do you know the address of his house ?
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; 的 stack長度 &amp;lt; &lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 能輸入的長度
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; 的 stack長度 $\gt$ &lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 能輸入的長度
   &lt;img src=&quot;/assets/pwn-ctf/go-home/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p class=&quot;notify&quot;&gt;* 0x20 &amp;lt; &lt;script type=&quot;math/tex&quot;&gt;\infty&lt;/script&gt; (gets 輸入長度沒有限制)&lt;/p&gt;
+&lt;p class=&quot;notify&quot;&gt;* $\color{red}{\text{0x20} \lt \infty}$ (gets 輸入長度沒有限制)&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;solution-1&quot;&gt;Solution&lt;/h2&gt;
 &lt;ul&gt;

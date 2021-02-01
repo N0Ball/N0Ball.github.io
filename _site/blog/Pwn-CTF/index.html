@@ -76,6 +76,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="Currently a nobody" />
 <meta name="keywords" content="№Ball, N0Ball, CTF ,*" />
+<meta name="version" content="1.0.4" />
 
 <!-- preloader -->
 <link rel="stylesheet" href="http://localhost:4000/assets/css/preloader.css">
@@ -92,12 +93,19 @@
 
 
 <!-- Load jQuery -->
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<!-- Load KaTeX -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
-
+<!-- Load MathJx-->
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 <!-- Android Lolipop Theme Color -->
 <meta name="theme-color" content=" rgb(255,90,90) ">
 
@@ -304,12 +312,12 @@ Do you know the address of his house ?
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><code class="highlighter-rouge">&lt;main&gt;</code> 的 stack長度 &lt; <code class="highlighter-rouge">gets</code> 能輸入的長度
+    <p><code class="highlighter-rouge">&lt;main&gt;</code> 的 stack長度 $\gt$ <code class="highlighter-rouge">gets</code> 能輸入的長度
   <img src="/assets/pwn-ctf/go-home/discription-0.png" alt="" /></p>
   </li>
 </ul>
 
-<p class="notify">* 0x20 &lt; <script type="math/tex">\infty</script> (gets 輸入長度沒有限制)</p>
+<p class="notify">* $\color{red}{\text{0x20} \lt \infty}$ (gets 輸入長度沒有限制)</p>
 
 <h2 class="no_toc" id="solution-1">Solution</h2>
 <ul>
