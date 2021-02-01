@@ -61,7 +61,7 @@ footer:
 markdown: kramdown
 kramdown:
   input: GFM
-  math_engine: mathjax
+  math_engine: katex
 highlighter: rouge
 pygmentsTheme: default
 friends:
