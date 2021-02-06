@@ -4,12 +4,12 @@ title:  "Welcome to My Blog!"
 date:   2021-01-29 02:41:44 +0800
 tags: Welcome
 color: rgb(255,90,90)
-cover: '../assets/Profile.jpg'
+cover: '../assets/img/Profile.jpg'
 subtitle: 'Currently a Nobody'
 ---
 # Welcome to My Blog
 
-![](/assets/Profile.jpg)
+![](/assets/img/Profile.jpg)
 
 ## Currently a NoBody
 - Also this is a test site

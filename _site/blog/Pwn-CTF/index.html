@@ -10,8 +10,8 @@
 <meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Pwn CTF Writeup" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性" />
-<meta property="og:description" content="Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性" />
+<meta name="description" content="Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性 題目有少…也就算惹ＸＤ" />
+<meta property="og:description" content="Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性 題目有少…也就算惹ＸＤ" />
 <link rel="canonical" href="http://localhost:4000/blog/Pwn-CTF/" />
 <meta property="og:url" content="http://localhost:4000/blog/Pwn-CTF/" />
 <meta property="og:site_name" content="№Ball" />
@@ -21,7 +21,7 @@
 <meta property="twitter:title" content="Pwn CTF Writeup" />
 <meta name="twitter:site" content="@your_name" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/blog/Pwn-CTF/","description":"Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性","@type":"BlogPosting","headline":"Pwn CTF Writeup","dateModified":"2021-01-29T14:41:44+08:00","datePublished":"2021-01-29T14:41:44+08:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/banner.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/Pwn-CTF/"},"@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/blog/Pwn-CTF/","description":"Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性 題目有少…也就算惹ＸＤ","@type":"BlogPosting","headline":"Pwn CTF Writeup","dateModified":"2021-01-29T14:41:44+08:00","datePublished":"2021-01-29T14:41:44+08:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/banner.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/Pwn-CTF/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <script type="application/ld+json">
@@ -76,14 +76,14 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="description" content="Currently a nobody" />
 <meta name="keywords" content="№Ball, N0Ball, CTF ,*" />
-<meta name="version" content="1.0.4" />
+<meta name="version" content="1.0.5" />
 
 <!-- preloader -->
 <link rel="stylesheet" href="http://localhost:4000/assets/css/preloader.css">
 
 <!-- Favicon -->
-<link href="/assets/icon.png" rel="shortcut icon" />
-<link href="/assets/icon.png" rel="apple-touch-icon-precomposed" />
+<link href="/assets/img/Profile.jpg" rel="shortcut icon" />
+<link href="/assets/img/Profile.jpg" rel="apple-touch-icon-precomposed" />
 <!-- Android Lolipop Theme Color -->
 <!-- <meta name="theme-color" content="#1464FB"> -->
 <title>Pwn CTF Writeup</title>
@@ -105,7 +105,10 @@
     }
   });
 </script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
 <!-- Android Lolipop Theme Color -->
 <meta name="theme-color" content=" rgb(255,90,90) ">
 
@@ -155,8 +158,8 @@
           </ul>
       </nav>
       <div id="top-boot">
-        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/boot_white.png" alt=""></a>
-        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/img/boot_white.png" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/img/boot_white.png" alt=""></a>
       </div>
   </div>
 
@@ -238,12 +241,14 @@
   <dt><strong>Intro：</strong></dt>
   <dd>一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ</dd>
   <dd>由於過了一段時間，所以題目順序就～隨性</dd>
+  <dd>題目有少…也就算惹ＸＤ</dd>
 </dl>
 
 <p><strong>Problems：</strong></p>
 <ul id="markdown-toc">
   <li><a href="#math-teacher" id="markdown-toc-math-teacher">Math Teacher</a></li>
   <li><a href="#go-home" id="markdown-toc-go-home">Go Home</a></li>
+  <li><a href="#pass" id="markdown-toc-pass">Pass</a></li>
   <li><a href="#to-be-done" id="markdown-toc-to-be-done">To be done…</a></li>
 </ul>
 
@@ -328,17 +333,41 @@ Do you know the address of his house ?
 <ol>
   <li>ubuntu 20 以後的 stack 對齊
     : 就是蓋過 <code class="highlighter-rouge">ret</code> 之後跳進 function 裡面的時候stack結尾必須是0x0不能是0x8</li>
-  <li><code class="highlighter-rouge">gets</code> 預設從 <code class="highlighter-rouge">$rbp - 0x20</code> 開始跳
+  <li><code class="highlighter-rouge">gets</code> 預設從 <code class="highlighter-rouge">$rbp - 0x20</code> 開始寫
     : 也就是 <code class="language-ruby highlighter-rouge"><span class="no">OFFSET</span> <span class="o">=</span> <span class="mh">0x20</span> <span class="o">+</span> <span class="mh">0x8</span></code></li>
 </ol>
 
 <h2 class="no_toc" id="payload">Payload</h2>
 <ul>
-  <li>1.要跳過的方法有很多，最簡單的就是不要跑 <a href="https://en.wikipedia.org/wiki/Function_prologue"><strong>Function Prologue</strong></a> 讓 stack 多了 <code class="highlighter-rouge">0x8</code> 就好</li>
-  <li>直接跳到 <code class="highlighter-rouge">0x4006ca</code> 就好</li>
+  <li>1.要跳過的方法有很多，最簡單的就是不要跑 <a href="https://en.wikipedia.org/wiki/Function_prologue"><strong>Function Prologue</strong></a> 讓 stack 多了 <code class="highlighter-rouge">0x8</code> 就好 -&gt; 直接跳到 <code class="highlighter-rouge">0x4006ca</code>  (&lt;Billyshouse + 0x4&gt;)</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">payload</span> <span class="o">=</span> <span class="n">b</span><span class="s">'A'</span><span class="o">*</span><span class="mh">0x28</span> <span class="o">+</span> <span class="n">p64</span><span class="p">(</span><span class="n">exe</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s">'Billyshouse'</span><span class="p">]</span><span class="o">+</span><span class="mh">0x4</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="pass">Pass</h1>
+<p><a href="/assets/pwn-ctf/pass/source" target="_blank"><strong>Source File</strong></a></p>
+
+<h2 class="no_toc" id="discription-2">Discription</h2>
+
+<ul>
+  <li>要讓<code class="language-python highlighter-rouge"><span class="n">token</span> <span class="o">=</span> <span class="mh">0xdeadbeef</span></code>
+<img src="/assets/pwn-ctf/pass/discription-1.png" alt="" /></li>
+  <li><code class="highlighter-rouge">&lt;main&gt;</code> 的 stack 大小為 <code class="language-python highlighter-rouge"><span class="mh">0x20</span></code>
+<img src="/assets/pwn-ctf/discription-2.png" alt="" /></li>
+  <li>用 <code class="highlighter-rouge">read</code> 但有限定大小，但大小可以蓋過token
+<img src="/assets/pwn-ctf/pass/discription-0.png" alt="" /></li>
+</ul>
+
+<h2 class="no_toc" id="solution-2">Solution</h2>
+
+<ul>
+  <li>計算 <code class="language-ruby highlighter-rouge"><span class="no">OFFSET</span> <span class="o">=</span> <span class="mh">0x20</span> <span class="o">-</span> <span class="mh">0x4</span></code> 就會是 <code class="highlighter-rouge">token</code> 的位置</li>
+</ul>
+
+<h2 class="no_toc" id="payload-1">Payload</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">payload</span> <span class="o">=</span> <span class="n">b</span><span class="s">'A'</span><span class="o">*</span><span class="p">(</span><span class="mh">0x20</span> <span class="o">-</span> <span class="mh">0x4</span><span class="p">)</span> <span class="o">+</span> <span class="n">p32</span><span class="p">(</span><span class="mh">0xdeadbeef</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h1 id="to-be-done">To be done…</h1>

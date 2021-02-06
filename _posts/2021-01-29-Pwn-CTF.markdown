@@ -10,6 +10,7 @@ subtitle: 'Pwn-CTF Writeup'
 **Intro：**
   : 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ
   : 由於過了一段時間，所以題目順序就～隨性
+  : 題目有少...也就算惹ＸＤ
 
 **Problems：**
 - TOC
@@ -91,16 +92,41 @@ def cal():
 {: .notify}
   1. ubuntu 20 以後的 stack 對齊
     : 就是蓋過 `ret` 之後跳進 function 裡面的時候stack結尾必須是0x0不能是0x8
-  2. `gets` 預設從 `$rbp - 0x20` 開始跳
+  2. `gets` 預設從 `$rbp - 0x20` 開始寫
     : 也就是 ```OFFSET = 0x20 + 0x8```{: .language-ruby}
 
 ## Payload
 {: .no_toc}
-- 1.要跳過的方法有很多，最簡單的就是不要跑 [**Function Prologue**](https://en.wikipedia.org/wiki/Function_prologue) 讓 stack 多了 `0x8` 就好
-- 直接跳到 `0x4006ca` 就好
+- 1.要跳過的方法有很多，最簡單的就是不要跑 [**Function Prologue**](https://en.wikipedia.org/wiki/Function_prologue) 讓 stack 多了 `0x8` 就好 -> 直接跳到 `0x4006ca`  (<Billyshouse + 0x4>)
 
 ```python
 payload = b'A'*0x28 + p64(exe.symbols['Billyshouse']+0x4)
 ```
+
+# Pass
+[**Source File**](/assets/pwn-ctf/pass/source){:target="_blank"}
+
+## Discription 
+{: .no_toc}
+
+- 要讓`token = 0xdeadbeef`{: .language-python}
+  ![](/assets/pwn-ctf/pass/discription-1.png)
+- `<main>` 的 stack 大小為 `0x20`{: .language-python}
+  ![](/assets/pwn-ctf/discription-2.png)
+- 用 `read` 但有限定大小，但大小可以蓋過token
+  ![](/assets/pwn-ctf/pass/discription-0.png)
+
+## Solution
+{: .no_toc}
+
+- 計算 `OFFSET = 0x20 - 0x4`{: .language-ruby} 就會是 `token` 的位置
+
+## Payload
+{: .no_toc}
+
+```python
+payload = b'A'*(0x20 - 0x4) + p32(0xdeadbeef)
+```
+
 
 # To be done...
