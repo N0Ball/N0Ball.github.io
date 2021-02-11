@@ -12,7 +12,7 @@ aboutyou: "
           use br tag for new line <br>
           and &\emsp for Chinese space
           "
-portraits: '/assets/madara.svg' # your portraits image file path for website
+portraits: '/assets/img/Profile.jpg' # your portraits image file path for website
 
 
 # Author information for SEO

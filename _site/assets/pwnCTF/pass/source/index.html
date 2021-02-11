@@ -1,0 +1,373 @@
+<!-- Home and other page layout-->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Introducing the head tag -->
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>pwnCTF source | №Ball</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="pwnCTF source" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="source of pwnCTF’s pass" />
+<meta property="og:description" content="source of pwnCTF’s pass" />
+<link rel="canonical" href="http://localhost:4000/assets/pwnCTF/pass/source/" />
+<meta property="og:url" content="http://localhost:4000/assets/pwnCTF/pass/source/" />
+<meta property="og:site_name" content="№Ball" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="pwnCTF source" />
+<meta name="twitter:site" content="@your_name" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/assets/pwnCTF/pass/source/","description":"source of pwnCTF’s pass","@type":"WebPage","headline":"pwnCTF source","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/banner.png"}},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Person",
+      "image": /assets/img/Profile.jpg,
+      "honorificPrefix": "MD.",
+      "name": Vincent,
+      "familyName": Chiang,
+      "honorificSuffix": ouo,
+      "disambiguatingDescription": *,
+      "birthPlace": *,
+      "birthDate": *,
+      "height": *,
+      "gender": male,
+      "memberOf": NCUGC, NCtfU,
+      "nationality": Taiwan,
+      "jobTitle": Nobody,
+      "knowsAbout": little CTF,
+      "knowsLanguage": Maderine, Taiwanese, English,
+      "email": ,
+      "url": " http://localhost:4000 ",
+      "test": 
+      "worksFor": {
+        "@type": LocalBusiness,
+        "name": ,
+        "openingHours": Sa-Fr 09:00-21:00,
+        "priceRange": $$$,
+        "telephone": +8801XXXXXXXX+8801XXXXXXXXX,
+        "image": ,
+        "address": {
+        "@type": LocalBusiness,
+        "addressCountry": ,
+        "addressLocality": ,
+        "addressRegion": 
+         }
+      },
+      "address": {
+        "@type": PostalAddress,
+        "addressCountry": ,
+        "addressLocality": ,
+        "addressRegion": 
+      },
+      "colleague": [
+      ]
+    }
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-sclable=0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Currently a nobody" />
+<meta name="keywords" content="№Ball, N0Ball, CTF ,*" />
+<meta name="version" content="1.0.5" />
+
+<!-- preloader -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/preloader.css">
+
+<!-- Favicon -->
+<link href="/assets/img/favicon.ico" rel="shortcut icon" />
+<link href="/assets/img/favicon.ico" rel="apple-touch-icon-precomposed" />
+<!-- Android Lolipop Theme Color -->
+<!-- <meta name="theme-color" content="#1464FB"> -->
+<title>pwnCTF source</title>
+<!-- Baidu statistics -->
+
+<!-- Google Analytics -->
+
+
+<!-- Load jQuery -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Load MathJx-->
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+</head>
+<body onload="loaderFunc()">
+
+<!-- preloader -->
+<div id="loader" class="loader">
+  <div class="artboard">
+    <div class="square"></div>
+    <div class="path">
+      <div class="small-squares">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end -->
+
+
+<header id="index-header">
+  <div class="top-center">
+      <div class="logo">
+          <a href="/" title="Code With Jhon.">N0Ball</a>
+      </div>
+      <nav class="top-nav">
+          <ul>
+              
+                <li><a href="/">Home</a></li>
+              
+                <li><a href="/tags/">Tags</a></li>
+              
+                <li><a href="/timeline/">Timeline</a></li>
+              
+                <li><a href="/about/">About</a></li>
+              
+                <li><a href="/reLink/">reLink</a></li>
+              
+          </ul>
+      </nav>
+      <div id="top-boot">
+        <a href="javascript:;" id="boot1" style="display:block;" onclick="document.getElementById('boot-area').style.display='block';document.getElementById('boot1').style.display='none';document.getElementById('boot2').style.display='block';"><img src="/assets/img/Profile.svg" alt=""></a>
+        <a href="javascript:;" id="boot2" style="display: none;" onclick="document.getElementById('boot-area').style.display='none';document.getElementById('boot1').style.display='block';document.getElementById('boot2').style.display='none';"><img src="/assets/img/Profile.svg" alt=""></a>
+      </div>
+  </div>
+
+</header>
+
+<div id="boot-area">
+    <ul>
+        
+          <a href="/"><li>Home</li></a>
+        
+          <a href="/tags/"><li>Tags</li></a>
+        
+          <a href="/timeline/"><li>Timeline</li></a>
+        
+          <a href="/about/"><li>About</li></a>
+        
+          <a href="/reLink/"><li>reLink</li></a>
+        
+    </ul>
+</div>
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Author" content="Made by 'tree'">
+    <meta name="GENERATOR" content="$Version: $ tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+    <style type="text/css">
+     <!-- 
+     BODY { font-family : ariel, monospace, sans-serif; }
+     P { font-weight: normal; font-family : ariel, monospace, sans-serif; color: black; background-color: transparent;}
+     B { font-weight: normal; color: black; background-color: transparent;}
+     A:visited { font-weight : normal; text-decoration : none; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+     A:link    { font-weight : normal; text-decoration : none; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+     A:hover   { color : #000000; font-weight : normal; text-decoration : underline; background-color : yellow; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+     A:active  { color : #000000; font-weight: normal; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+     .VERSION { font-size: small; font-family : arial, sans-serif; }
+     .NORM  { color: black;  background-color: transparent;}
+     .FIFO  { color: purple; background-color: transparent;}
+     .CHAR  { color: yellow; background-color: transparent;}
+     .DIR   { color: blue;   background-color: transparent;}
+     .BLOCK { color: yellow; background-color: transparent;}
+     .LINK  { color: aqua;   background-color: transparent;}
+     .SOCK  { color: fuchsia;background-color: transparent;}
+     .EXEC  { color: green;  background-color: transparent;}
+     -->
+    </style>
+    <link rel="stylesheet"
+           href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+   </head>
+<body>
+	<h1>Directory Tree</h1><p>
+	<a href=".">.</a><br>
+	├── <a href="./pass">pass</a><br>
+	├── <a href="./pass.c">pass.c</a><br>
+	└── <a href="./solve.txt">solve.py</a><br>
+	<br><br>
+	</p>
+</body>
+<script>
+$("script[type='math/tex']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<span class=\"inline-equation\">" + katex.renderToString(tex) + "</span>";
+  });
+
+$("script[type='math/tex; mode=display']").replaceWith(
+  function(){
+    var tex = $(this).text();
+    return "<div class=\"equation\">" + katex.renderToString("\\displaystyle "+tex) + "</div>";
+});
+</script>
+
+<footer id="bottom">
+  <script src="/assets/css/bootstrap.min.css"></script>
+
+<!-- START BREADCRUMBS -->
+<nav aria-label="breadcrumb">
+
+  <ol class="breadcrumb">
+  
+  
+  
+    
+
+    
+    
+    
+    
+
+    
+  
+    
+
+    
+    
+    
+    
+
+    
+  
+  </ol>
+</nav>
+
+<!-- END BREADCRUMBS -->
+
+
+<div id="breadcrumbs">
+
+<a href="/">Home</a>
+
+  
+    / <a href="/assets/">Assets</a>
+  
+
+  
+    / <a href="/assets/pwnCTF/">Pwnctf</a>
+  
+
+  
+    / <a href="/assets/pwnCTF/pass/">Pass</a>
+  
+
+  
+    / Source
+  
+
+</div>
+<style>
+#breadcrumbs {margin-left: 0
+
+      font-size: 10rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      list-style: none;
+      background-color: # #fcfcfc;
+      border-radius: 0.25rem;
+
+      content: "";
+      display: table;
+      clear: both;
+
+      float: left;
+
+      display: inline-block;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      color: #818a91;
+      content: "/";
+
+      text-decoration: underline;
+
+      text-decoration: none;
+
+}
+</style>
+
+  <br>
+  <br>
+  <span style="float: right;">
+  №Ball ©
+  
+  
+  2021
+  </span>
+  <br>
+  <span style="float: right;">
+  Powered by <a href="https://www.jekyll.com/">Jekyll</a> | <a href="https://github.com/JonyBepary/HardCandy-Jekyll-Mod">HardCandy-Jekyll Mod</a></span>
+</footer>
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/media.css">
+<link rel="stylesheet" href="/assets/css/animate.min.css">
+<link rel="stylesheet" href="/assets/css/pygments/pygments_default.css">
+<link rel="stylesheet" href="/assets/css/github-markdown.css">
+<!-- SNS-icon -->
+<script src="/assets/js/font_856428_y9z6nq7zf5.js"></script>
+<!-- share.css -->
+<link rel="stylesheet" href="/assets/css/share.min.css">
+<!-- font -->
+<link rel="stylesheet" href="/assets/css/font.css">
+<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Pacifico|Ubuntu|Roboto+Mono|Source+Sans+Pro" rel="stylesheet"> -->
+
+
+<!-- Quote the animation effect of wow.js -->
+<script src="/assets/js/wow.js"></script>
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        // offset: 5,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+
+<!-- Page refreshes back to top -->
+<script>
+    window.onbeforeunload = function(){
+        //The page automatically returns to the top after refreshing
+        document.documentElement.scrollTop = 0;  //ie下
+        document.body.scrollTop = 0;  //非ie
+    }
+</script>
+
+
+<!-- preloder script -->
+<script>
+    var preloader = document.getElementById("loader");
+    function loaderFunc(){
+      preloader.style.display = 'none';
+    };
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!-- end -->
+
+
+</body>
+</html>

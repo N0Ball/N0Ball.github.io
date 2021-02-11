@@ -1,48 +1,39 @@
 ---
 layout: post
-title:  "Pwn CTF Writeup"
+title:  "pwn-CTF Writeup - 1"
 date:   2021-01-29 14:41:44 +0800
 tags: CTF Writeup
 color: rgb(255,90,90)
-cover: '/assets/pwn-ctf/cover.png'
-subtitle: 'Pwn-CTF Writeup'
+cover: '/assets/pwnCTF/cover.png'
+subtitle: 'pwn-CTF Writeup'
 ---
 **Intro：**
   : 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ
   : 由於過了一段時間，所以題目順序就～隨性
   : 題目有少...也就算惹ＸＤ
+  : 題目有點多，所以按照我自己心目中的難易度分等級寫
 
 **Problems：**
 - TOC
 {:toc}
 
 # Math Teacher
-[**Source File**](/assets/pwn-ctf/math-teacher/source){:target="_blank"}
+[**Source File**](/assets/pwnCTF/math_teacher/source){:target="_blank"}
 
 ## Discription
 {: .no_toc}
-- 這題簡單的考你會不會用 pwntools 
+
 - 問100題二元一次方程式，解完就有FLAG
 
 ## Solution
 {: .no_toc}
-- 用克拉馬公式
+用克拉馬公式
+
+## Payload
+{: .no_toc}
 
 ``` python
 def cal():
-    f1 = r.recvline()
-    f2 = r.recvline()
-
-    print("Function 1: ", f1)
-    print("Function 2: ", f2)
-
-    a1 = int(f1[:f1.find(b'x')-3])
-    b1 = int(f1[f1.find(b'+')+1:f1.find(b'y')-3])
-    c1 = int(f1[f1.find(b'=')+1:])
-
-    a2 = int(f2[:f2.find(b'x')-3])
-    b2 = int(f2[f2.find(b'+')+1:f2.find(b'y')-3])
-    c2 = int(f2[f2.find(b'=')+1:])
 
     delta = a1*b2-a2*b1
 
@@ -53,73 +44,77 @@ def cal():
         x = int((c1*b2-b1*c2)/delta)
         y = int((a1*c2-c1*a2)/delta)
 
-    r.recvuntil('= ')
-    r.sendline(str(x))
-    r.recvuntil('= ')
-    r.sendline(str(y))
 ```
 
 # Go Home
-[**Source File**](/assets/pwn-ctf/go-home/source){:target="_blank"}
+[**Source File**](/assets/pwnCTF/gohome/source){:target="_blank"}
 
 ## Discription 
 {: .no_toc}
-- 先是問你有沒有 Home
 
+- 先是問你有沒有 Home
   ```shell
   Billy want to go home now.
   Do you know the address of his house ?
   ```
 - SourceFile 又有給 Home
-
   ``` c
   void Billyshouse(){
     system("cat /home/ctf/flag");
   }
   ```
 
-- `<main>` 的 stack長度 $\gt$ `gets` 能輸入的長度
-    ![](/assets/pwn-ctf/go-home/discription-0.png)
+- **`<main>`** 的 stack長度 $\gt$ `gets` 能輸入的長度
+![](/assets/pwnCTF/gohome/discription-0.png)
 
 \* $\color{red}{\text{0x20} \lt \infty}$ (gets 輸入長度沒有限制)
 {: .notify}
 
 ## Solution
 {: .no_toc}
-- 簡單的 **Bof** 蓋過 `<main>` 的 `ret`
+用適當的 OFFSET 把 **`<main>`** 的 `ret address` 改蓋成想要的位置
 
+<details markdown="1">
 這邊有兩個要注意的地方
 {: .notify}
   1. ubuntu 20 以後的 stack 對齊
-    : 就是蓋過 `ret` 之後跳進 function 裡面的時候stack結尾必須是0x0不能是0x8
-  2. `gets` 預設從 `$rbp - 0x20` 開始寫
-    : 也就是 ```OFFSET = 0x20 + 0x8```{: .language-ruby}
+    > 就是蓋過 `ret` 之後跳進 function 裡面的時候 `$rsp`{: .language-terminal} 結尾必須是0x0不能是0x8，要跳過的方法有很多，最簡單的就是不要跑 [**Function Prologue**](https://en.wikipedia.org/wiki/Function_prologue) 讓 stack 多了 `0x8`{: .language-applescript} 就好 
+       - `ret address` 的位置蓋成 **`<Billyshouse + 0x4>`**
+  2. `gets` 預設從 `$rbp - 0x20`{: .language-terminal} 開始寫
+    : 也就是 ```OFFSET = 0x20 + 0x8```{: .language-m68k}
+</details>
 
 ## Payload
 {: .no_toc}
-- 1.要跳過的方法有很多，最簡單的就是不要跑 [**Function Prologue**](https://en.wikipedia.org/wiki/Function_prologue) 讓 stack 多了 `0x8` 就好 -> 直接跳到 `0x4006ca`  (<Billyshouse + 0x4>)
 
 ```python
 payload = b'A'*0x28 + p64(exe.symbols['Billyshouse']+0x4)
 ```
 
 # Pass
-[**Source File**](/assets/pwn-ctf/pass/source){:target="_blank"}
+[**Source File**](/assets/pwnCTF/pass/source){:target="_blank"}
 
 ## Discription 
 {: .no_toc}
 
-- 要讓`token = 0xdeadbeef`{: .language-python}
-  ![](/assets/pwn-ctf/pass/discription-1.png)
-- `<main>` 的 stack 大小為 `0x20`{: .language-python}
-  ![](/assets/pwn-ctf/discription-2.png)
-- 用 `read` 但有限定大小，但大小可以蓋過token
-  ![](/assets/pwn-ctf/pass/discription-0.png)
+- 找key遊戲？
+![](/assets/pwnCTF/pass/discription-3.png)
+- 要讓`token = 0xdeadbeef`{: .language-m68k}
+  ![](/assets/pwnCTF/pass/discription-1.png)
+- **`<main>`** 的 stack 大小為 `0x20`{: .language-applescript}
+  ![](/assets/pwnCTF/pass/discription-2.png)
+- 用 `read` 讀
 
 ## Solution
 {: .no_toc}
+用適當的 OFFSET 把 `token` 蓋掉
 
-- 計算 `OFFSET = 0x20 - 0x4`{: .language-ruby} 就會是 `token` 的位置
+<details markdown="1">
+![](/assets/pwnCTF/pass/solution-0.png)
+- `OFFSET = 0x20 - 0x4`{: .language-m68k}
+  - `&token = $rbp - 0x4`{: .language-terminal}
+  - `&writeAddress = $rbp - 0x20`{: .language-terminal}
+</details>
 
 ## Payload
 {: .no_toc}
@@ -128,5 +123,222 @@ payload = b'A'*0x28 + p64(exe.symbols['Billyshouse']+0x4)
 payload = b'A'*(0x20 - 0x4) + p32(0xdeadbeef)
 ```
 
+# Angelboy - bofe4sy
 
-# To be done...
+[**Source File**](/assets/pwnCTF/bofe4sy/source){:target="_blank"}
+
+## Discription
+{: .no_toc}
+
+- 就一個input讓你玩
+![](/assets/pwnCTF/bofe4sy/discription-3.png)
+- 雖然沒有給 source file 但是很明顯要想辦法跳到 **`<l33t>`**
+![](/assets/pwnCTF/bofe4sy/discription-0.png)
+- **`<main>`** 的 stack 大小為 `0x20`{: .language-applescript}
+![](/assets/pwnCTF/bofe4sy/discription-1.png)
+- `read` 可以輸入 `0x64`{: .language-applescript} (看 `$rdx`{: .language-terminal} )
+![](/assets/pwnCTF/bofe4sy/discription-2.png)
+
+## Solution
+{: .no_toc}
+用適當的 OFFSET 把 **<main>** 的 ret address 改掉
+
+<details markdown="1">
+- 有 stack 對齊問題 -> 實際要跳的位置要改
+- `OFFSET = 0x20 + 0x8`{: .language-m68k}
+  - `read` 從 `$rbp - 0x20`{: .language-terminal}
+</details>
+
+## Payload
+{: .no_toc}
+
+```python
+payload = b'A'*(0x20+0x8) + p64(exe.symbols['l33t'] + 0x4)
+```
+
+# Yuan - pwntools
+
+[**Source File**](/assets/pwnCTF/pwntools/source)
+
+## Discription
+{: .no_toc}
+
+- 前面先要一個 magic
+- 然後就是60秒內解1000題數學
+![](/assets/pwnCTF/pwntools/discription-0.png)
+
+## Solution
+{: .no_toc}
+乖乖地解完 Magic 和 1000題數學
+
+<details markdown="1">
+- Magic 
+![](/assets/pwnCTF/pwntools/solution-0.png)
+  - 記得是 [**little endian**](https://en.wikipedia.org/wiki/Endianness)
+- python 有個 `eval()`{: .language-ruby} 他很好用
+</details>
+
+## Payload
+{: .no_toc}
+
+```python
+magic = p32(0x79487ff)
+for i in range(1, 1000):
+  payload = eval(io.recv())
+```
+
+# Yuan - binary
+
+[**Source File**](/assets/pwnCTF/binary/source){:target="_blank"}
+
+## Discription
+{: .no_toc}
+基礎 Reverse 題
+
+- 有三個stage，全破給你shell
+![](/assets/pwnCTF/binary/discription-0.png)
+
+## Solution
+{: .no_toc}
+一個個破台
+
+<details markdown="1">
+### Stage 1
+{: .no_toc}
+
+- Assembly
+![](/assets/pwnCTF/binary/solution-0.png)
+- Disassembly
+  ```python
+  if (input & 0x1) and (input & 0x100000) and (input & 0x200):
+    pass()
+  else:
+    exit()
+  ```
+- 稍微算了一下，`0x100001`{: .language-applescript} 符合結果
+
+### Stage 2
+{: .no_toc}
+
+- Assembly
+![](/assets/pwnCTF/binary/solution-1.png)
+- Disassembly
+  ```python
+  if input[0] == 0x64 and input[1] == 0x100 and input[2] == 0xfaceb00c:
+    pass()
+  else:
+    exit()
+  ```
+- 照樣輸入就對了不難
+
+### Stage 3
+{: .no_toc}
+
+- Assembly
+![](/assets/pwnCTF/binary/solution-2.png)
+- Disassembly
+  ```python
+  if input == 0x60107c:
+    pass()
+  else:
+    exit()
+  ```
+- 照樣輸入就對了不難
+</details>
+
+## Payload
+{: .no_toc}
+
+注意這邊輸入是 `%d`{: .language-python} 要把16進位換成10進位
+{: .notify}
+
+```python
+# Stage 1
+payload = "1048577"
+
+# Stage 2
+payload = "100 256 4207849484"
+
+# Stage 3
+payload = "6295676"
+```
+
+# Yuan - return 
+[**Source File**](/assets/pwnCTF/return/source){: target="_blank"}
+
+## Discription
+{: .no_toc}
+
+- 一來就問你是不是 hacker 非常的不講武德
+![](/assets/pwnCTF/return/discription-3.png)
+- 有一個很明顯的function給你跳
+![](/assets/pwnCTF/return/discription-0.png)
+- **`<main>`** 的 stack 大小是 `0x40`{: .language-applescript}
+![](/assets/pwnCTF/return/discription-1.png)
+- 用 gets 讀 -> 有BOF
+![](/assets/pwnCTF/return/discription-2.png)
+
+## Solution
+{: .no_toc}
+直接計算OFFSET 用 BOF 蓋過 ret address 讓程式跳到**`<you_cant_see_this_its_too_evil>`** 執行 shell
+
+<details markdown="1">
+- 一樣有 stack 對齊檢查要注意 
+  - 所以真正要跳的地方是**`<you_cant_see_this_its_too_evil + 0x4>`**
+- `OFFSET = 0x30 + 0x8`{: .language-m68k}
+</details>
+
+## Payload
+{: .no_toc}
+
+```python
+payload = b'A'*(0x30+0x8) + p64(exe.symbols['you_cant_see_this_its_too_evil'] + 0x4)
+```
+
+# Yuan - luck
+[**Source File**](/assets/pwnCTF/luck/source){: target="_blank"}
+
+## Discription
+{: .no_toc}
+
+- 就是個 repeater 
+![](/assets/pwnCTF/luck/discription-0.png)
+- 給 `read` 可寫入大小為 `0x64`{:.language-applescript}
+![](/assets/pwnCTF/luck/discription-1.png)
+- 有兩關要先過
+![](/assets/pwnCTF/luck/discription-2.png)
+- 過關後猜密碼
+![](/assets/pwnCTF/luck/discription-4.png)
+- **`<main>`** 的 stack大小為 `0x20`{:.language-applescript}
+![](/assets/pwnCTF/luck/discription-3.png)
+- 會直接 **`<exit>`** 不會 **`ret`**
+
+## Solution
+{: .no_toc}
+
+過關的部分寫好，順便把密碼蓋成自己喜歡的密碼
+
+<details markdown="1">
+
+- `0xfaceb00c`{:.language-applescript} :
+  - `OFFSET = 0x20 - 0x14`{:.language-m68k}
+- `0xdeadbeef`{:.language-applescript} :
+  - `OFFSET = 0x20 - 0x10`{:.language-m68k}
+- password :
+  - `OFFSET = 0x20 - 0xc`{:.language-m68k}
+
+</details>
+
+## Payload
+{: .no_toc}
+把上面的 OFFSET 組裝一下就可以了 這邊密碼選 BBBB
+
+```python
+payload = b'A'*(0x20-0x14)  + p32(0xfaceb00c) + p32(0xdeadbeef) + b'B'*0x4
+password = "BBBB"
+```
+
+# Conclution
+為了不要讓整個頁面東西太多（pwn-CTf 的題目真的很多)
+
+: 我這裡就分段寫，這邊基本上是把比較簡單的部分先抓出來玩<br>剩下的以後有機會會再寫

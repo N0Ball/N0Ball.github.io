@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-06T10:18:12+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">№Ball</title><subtitle>Currently a nobody</subtitle><author><name>true</name></author><entry><title type="html">Pwn CTF Writeup</title><link href="http://localhost:4000/blog/Pwn-CTF/" rel="alternate" type="text/html" title="Pwn CTF Writeup" /><published>2021-01-29T14:41:44+08:00</published><updated>2021-01-29T14:41:44+08:00</updated><id>http://localhost:4000/blog/Pwn-CTF</id><content type="html" xml:base="http://localhost:4000/blog/Pwn-CTF/">&lt;dl&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-02-11T16:22:02+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">№Ball</title><subtitle>Currently a nobody</subtitle><author><name>true</name></author><entry><title type="html">pwn-CTF Writeup - 1</title><link href="http://localhost:4000/blog/Pwn-CTF/" rel="alternate" type="text/html" title="pwn-CTF Writeup - 1" /><published>2021-01-29T14:41:44+08:00</published><updated>2021-01-29T14:41:44+08:00</updated><id>http://localhost:4000/blog/Pwn-CTF</id><content type="html" xml:base="http://localhost:4000/blog/Pwn-CTF/">&lt;dl&gt;
   &lt;dt&gt;&lt;strong&gt;Intro：&lt;/strong&gt;&lt;/dt&gt;
   &lt;dd&gt;一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ&lt;/dd&gt;
   &lt;dd&gt;由於過了一段時間，所以題目順序就～隨性&lt;/dd&gt;
   &lt;dd&gt;題目有少…也就算惹ＸＤ&lt;/dd&gt;
+  &lt;dd&gt;題目有點多，所以按照我自己心目中的難易度分等級寫&lt;/dd&gt;
 &lt;/dl&gt;
 
 &lt;p&gt;&lt;strong&gt;Problems：&lt;/strong&gt;&lt;/p&gt;
@@ -10,37 +11,29 @@
   &lt;li&gt;&lt;a href=&quot;#math-teacher&quot; id=&quot;markdown-toc-math-teacher&quot;&gt;Math Teacher&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#go-home&quot; id=&quot;markdown-toc-go-home&quot;&gt;Go Home&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#pass&quot; id=&quot;markdown-toc-pass&quot;&gt;Pass&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#to-be-done&quot; id=&quot;markdown-toc-to-be-done&quot;&gt;To be done…&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#angelboy---bofe4sy&quot; id=&quot;markdown-toc-angelboy---bofe4sy&quot;&gt;Angelboy - bofe4sy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#yuan---pwntools&quot; id=&quot;markdown-toc-yuan---pwntools&quot;&gt;Yuan - pwntools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#yuan---binary&quot; id=&quot;markdown-toc-yuan---binary&quot;&gt;Yuan - binary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#yuan---return&quot; id=&quot;markdown-toc-yuan---return&quot;&gt;Yuan - return&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#yuan---luck&quot; id=&quot;markdown-toc-yuan---luck&quot;&gt;Yuan - luck&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conclution&quot; id=&quot;markdown-toc-conclution&quot;&gt;Conclution&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;math-teacher&quot;&gt;Math Teacher&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/pwn-ctf/math-teacher/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/math_teacher/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;discription&quot;&gt;Discription&lt;/h2&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;這題簡單的考你會不會用 pwntools&lt;/li&gt;
   &lt;li&gt;問100題二元一次方程式，解完就有FLAG&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;用克拉馬公式&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;用克拉馬公式&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload&quot;&gt;Payload&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recvline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recvline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Function 1: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Function 2: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'='&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;b2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'='&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:])&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt;
 
@@ -51,87 +44,328 @@
         &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recvuntil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'= '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recvuntil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'= '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;go-home&quot;&gt;Go Home&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/pwn-ctf/go-home/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/gohome/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;discription-1&quot;&gt;Discription&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;先是問你有沒有 Home&lt;/p&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;先是問你有沒有 Home
     &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Billy want to go home now.
 Do you know the address of his house ?
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SourceFile 又有給 Home&lt;/p&gt;
-
+  &lt;li&gt;SourceFile 又有給 Home
     &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Billyshouse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cat /home/ctf/flag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; 的 stack長度 $\gt$ &lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 能輸入的長度
-  &lt;img src=&quot;/assets/pwn-ctf/go-home/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 stack長度 $\gt$ &lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 能輸入的長度
+&lt;img src=&quot;/assets/pwnCTF/gohome/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p class=&quot;notify&quot;&gt;* $\color{red}{\text{0x20} \lt \infty}$ (gets 輸入長度沒有限制)&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;solution-1&quot;&gt;Solution&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;簡單的 &lt;strong&gt;Bof&lt;/strong&gt; 蓋過 &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;ret&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;用適當的 OFFSET 把 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;ret address&lt;/code&gt; 改蓋成想要的位置&lt;/p&gt;
 
-&lt;p class=&quot;notify&quot;&gt;這邊有兩個要注意的地方&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;ubuntu 20 以後的 stack 對齊
-    : 就是蓋過 &lt;code class=&quot;highlighter-rouge&quot;&gt;ret&lt;/code&gt; 之後跳進 function 裡面的時候stack結尾必須是0x0不能是0x8&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 預設從 &lt;code class=&quot;highlighter-rouge&quot;&gt;$rbp - 0x20&lt;/code&gt; 開始寫
-    : 也就是 &lt;code class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;span class=&quot;no&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x8&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;details&gt;
+  &lt;p class=&quot;notify&quot;&gt;這邊有兩個要注意的地方&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;ubuntu 20 以後的 stack 對齊
+    &amp;gt; 就是蓋過 &lt;code class=&quot;highlighter-rouge&quot;&gt;ret&lt;/code&gt; 之後跳進 function 裡面的時候 &lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;rsp&lt;/code&gt; 結尾必須是0x0不能是0x8，要跳過的方法有很多，最簡單的就是不要跑 &lt;a href=&quot;https://en.wikipedia.org/wiki/Function_prologue&quot;&gt;&lt;strong&gt;Function Prologue&lt;/strong&gt;&lt;/a&gt; 讓 stack 多了 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x8&lt;/span&gt;&lt;/code&gt; 就好
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ret address&lt;/code&gt; 的位置蓋成 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;Billyshouse + 0x4&amp;gt;&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gets&lt;/code&gt; 預設從 &lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;rbp - 0x20&lt;/code&gt; 開始寫
+    : 也就是 &lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x8&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/details&gt;
 
-&lt;h2 class=&quot;no_toc&quot; id=&quot;payload&quot;&gt;Payload&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;1.要跳過的方法有很多，最簡單的就是不要跑 &lt;a href=&quot;https://en.wikipedia.org/wiki/Function_prologue&quot;&gt;&lt;strong&gt;Function Prologue&lt;/strong&gt;&lt;/a&gt; 讓 stack 多了 &lt;code class=&quot;highlighter-rouge&quot;&gt;0x8&lt;/code&gt; 就好 -&amp;gt; 直接跳到 &lt;code class=&quot;highlighter-rouge&quot;&gt;0x4006ca&lt;/code&gt;  (&amp;lt;Billyshouse + 0x4&amp;gt;)&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-1&quot;&gt;Payload&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x28&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Billyshouse'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;pass&quot;&gt;Pass&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/assets/pwn-ctf/pass/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/pass/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;discription-2&quot;&gt;Discription&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;要讓&lt;code class=&quot;language-python highlighter-rouge&quot;&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xdeadbeef&lt;/span&gt;&lt;/code&gt;
-&lt;img src=&quot;/assets/pwn-ctf/pass/discription-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt; 的 stack 大小為 &lt;code class=&quot;language-python highlighter-rouge&quot;&gt;&lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt;&lt;/code&gt;
-&lt;img src=&quot;/assets/pwn-ctf/discription-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;用 &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 但有限定大小，但大小可以蓋過token
-&lt;img src=&quot;/assets/pwn-ctf/pass/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;找key遊戲？
+&lt;img src=&quot;/assets/pwnCTF/pass/discription-3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;要讓&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xdeadbeef&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/pass/discription-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 stack 大小為 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/pass/discription-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;用 &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 讀&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&quot;no_toc&quot; id=&quot;solution-2&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;用適當的 OFFSET 把 &lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt; 蓋掉&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;計算 &lt;code class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;span class=&quot;no&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;&lt;/code&gt; 就會是 &lt;code class=&quot;highlighter-rouge&quot;&gt;token&lt;/code&gt; 的位置&lt;/li&gt;
-&lt;/ul&gt;
+&lt;details&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/pwnCTF/pass/solution-0.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x4&lt;/span&gt;&lt;/code&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;amp;token = $&lt;/span&gt;rbp - 0x4&lt;/code&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;amp;writeAddress = $&lt;/span&gt;rbp - 0x20&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
 
-&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-1&quot;&gt;Payload&lt;/h2&gt;
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-2&quot;&gt;Payload&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xdeadbeef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;to-be-done&quot;&gt;To be done…&lt;/h1&gt;</content><author><name>true</name></author><category term="CTF" /><category term="Writeup" /><summary type="html">Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性 題目有少…也就算惹ＸＤ</summary></entry><entry><title type="html">Welcome to My Blog!</title><link href="http://localhost:4000/blog/Welcome-to-My-Site/" rel="alternate" type="text/html" title="Welcome to My Blog!" /><published>2021-01-29T02:41:44+08:00</published><updated>2021-01-29T02:41:44+08:00</updated><id>http://localhost:4000/blog/Welcome-to-My-Site</id><content type="html" xml:base="http://localhost:4000/blog/Welcome-to-My-Site/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog&lt;/h1&gt;
+&lt;h1 id=&quot;angelboy---bofe4sy&quot;&gt;Angelboy - bofe4sy&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/bofe4sy/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;discription-3&quot;&gt;Discription&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;就一個input讓你玩
+&lt;img src=&quot;/assets/pwnCTF/bofe4sy/discription-3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;雖然沒有給 source file 但是很明顯要想辦法跳到 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;l33t&amp;gt;&lt;/code&gt;&lt;/strong&gt;
+&lt;img src=&quot;/assets/pwnCTF/bofe4sy/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 stack 大小為 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/bofe4sy/discription-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 可以輸入 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x64&lt;/span&gt;&lt;/code&gt; (看 &lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;rdx&lt;/code&gt; )
+&lt;img src=&quot;/assets/pwnCTF/bofe4sy/discription-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;solution-3&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;用適當的 OFFSET 把 &lt;strong&gt;&amp;lt;main&amp;gt;&lt;/strong&gt; 的 ret address 改掉&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;ul&gt;
+    &lt;li&gt;有 stack 對齊問題 -&amp;gt; 實際要跳的位置要改&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x8&lt;/span&gt;&lt;/code&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 從 &lt;code class=&quot;language-terminal highlighter-rouge&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;rbp - 0x20&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-3&quot;&gt;Payload&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'l33t'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;yuan---pwntools&quot;&gt;Yuan - pwntools&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/pwntools/source&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;discription-4&quot;&gt;Discription&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;前面先要一個 magic&lt;/li&gt;
+  &lt;li&gt;然後就是60秒內解1000題數學
+&lt;img src=&quot;/assets/pwnCTF/pwntools/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;solution-4&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;乖乖地解完 Magic 和 1000題數學&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Magic 
+&lt;img src=&quot;/assets/pwnCTF/pwntools/solution-0.png&quot; alt=&quot;&quot; /&gt;
+      &lt;ul&gt;
+        &lt;li&gt;記得是 &lt;a href=&quot;https://en.wikipedia.org/wiki/Endianness&quot;&gt;&lt;strong&gt;little endian&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;python 有個 &lt;code class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt; 他很好用&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-4&quot;&gt;Payload&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;magic&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x79487ff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;io&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;yuan---binary&quot;&gt;Yuan - binary&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/binary/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;discription-5&quot;&gt;Discription&lt;/h2&gt;
+&lt;p&gt;基礎 Reverse 題&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;有三個stage，全破給你shell
+&lt;img src=&quot;/assets/pwnCTF/binary/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;solution-5&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;一個個破台&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;h3 class=&quot;no_toc&quot; id=&quot;stage-1&quot;&gt;Stage 1&lt;/h3&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Assembly
+&lt;img src=&quot;/assets/pwnCTF/binary/solution-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;Disassembly
+      &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x100000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;稍微算了一下，&lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x100001&lt;/span&gt;&lt;/code&gt; 符合結果&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3 class=&quot;no_toc&quot; id=&quot;stage-2&quot;&gt;Stage 2&lt;/h3&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Assembly
+&lt;img src=&quot;/assets/pwnCTF/binary/solution-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;Disassembly
+      &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x64&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x100&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0xfaceb00c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;照樣輸入就對了不難&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;h3 class=&quot;no_toc&quot; id=&quot;stage-3&quot;&gt;Stage 3&lt;/h3&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;Assembly
+&lt;img src=&quot;/assets/pwnCTF/binary/solution-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;Disassembly
+      &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x60107c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;照樣輸入就對了不難&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-5&quot;&gt;Payload&lt;/h2&gt;
+
+&lt;p class=&quot;notify&quot;&gt;注意這邊輸入是 &lt;code class=&quot;language-python highlighter-rouge&quot;&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;/code&gt; 要把16進位換成10進位&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Stage 1
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;1048577&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Stage 2
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;100 256 4207849484&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Stage 3
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;6295676&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;yuan---return&quot;&gt;Yuan - return&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/return/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;discription-6&quot;&gt;Discription&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;一來就問你是不是 hacker 非常的不講武德
+&lt;img src=&quot;/assets/pwnCTF/return/discription-3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;有一個很明顯的function給你跳
+&lt;img src=&quot;/assets/pwnCTF/return/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 stack 大小是 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x40&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/return/discription-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;用 gets 讀 -&amp;gt; 有BOF
+&lt;img src=&quot;/assets/pwnCTF/return/discription-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;solution-6&quot;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;直接計算OFFSET 用 BOF 蓋過 ret address 讓程式跳到&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;you_cant_see_this_its_too_evil&amp;gt;&lt;/code&gt;&lt;/strong&gt; 執行 shell&lt;/p&gt;
+
+&lt;details&gt;
+  &lt;ul&gt;
+    &lt;li&gt;一樣有 stack 對齊檢查要注意
+      &lt;ul&gt;
+        &lt;li&gt;所以真正要跳的地方是&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;you_cant_see_this_its_too_evil + 0x4&amp;gt;&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x30&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x8&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-6&quot;&gt;Payload&lt;/h2&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x30&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p64&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'you_cant_see_this_its_too_evil'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;yuan---luck&quot;&gt;Yuan - luck&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;/assets/pwnCTF/luck/source&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;Source File&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;discription-7&quot;&gt;Discription&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;就是個 repeater 
+&lt;img src=&quot;/assets/pwnCTF/luck/discription-0.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;給 &lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt; 可寫入大小為 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x64&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/luck/discription-1.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;有兩關要先過
+&lt;img src=&quot;/assets/pwnCTF/luck/discription-2.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;過關後猜密碼
+&lt;img src=&quot;/assets/pwnCTF/luck/discription-4.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;main&amp;gt;&lt;/code&gt;&lt;/strong&gt; 的 stack大小為 &lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt;&lt;/code&gt;
+&lt;img src=&quot;/assets/pwnCTF/luck/discription-3.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;會直接 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;exit&amp;gt;&lt;/code&gt;&lt;/strong&gt; 不會 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ret&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;solution-7&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;過關的部分寫好，順便把密碼蓋成自己喜歡的密碼&lt;/p&gt;
+
+&lt;details&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xfaceb00c&lt;/span&gt;&lt;/code&gt; :
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x14&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-applescript highlighter-rouge&quot;&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xdeadbeef&lt;/span&gt;&lt;/code&gt; :
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x10&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;password :
+      &lt;ul&gt;
+        &lt;li&gt;&lt;code class=&quot;language-m68k highlighter-rouge&quot;&gt;&lt;span class=&quot;nl&quot;&gt;OFFSET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xc&lt;/span&gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/details&gt;
+
+&lt;h2 class=&quot;no_toc&quot; id=&quot;payload-7&quot;&gt;Payload&lt;/h2&gt;
+&lt;p&gt;把上面的 OFFSET 組裝一下就可以了 這邊密碼選 BBBB&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x20&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x14&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xfaceb00c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0xdeadbeef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'B'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x4&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;BBBB&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;conclution&quot;&gt;Conclution&lt;/h1&gt;
+&lt;dl&gt;
+  &lt;dt&gt;為了不要讓整個頁面東西太多（pwn-CTf 的題目真的很多)&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;我這裡就分段寫，這邊基本上是把比較簡單的部分先抓出來玩&lt;br /&gt;剩下的以後有機會會再寫&lt;/p&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;</content><author><name>true</name></author><category term="CTF" /><category term="Writeup" /><summary type="html">Intro： 一個高中生的CTF練習 剛好是我想要學習的PWN所以就跟著高中生一起嗨ＯＵＯ 由於過了一段時間，所以題目順序就～隨性 題目有少…也就算惹ＸＤ 題目有點多，所以按照我自己心目中的難易度分等級寫</summary></entry><entry><title type="html">Welcome to My Blog!</title><link href="http://localhost:4000/blog/Welcome-to-My-Site/" rel="alternate" type="text/html" title="Welcome to My Blog!" /><published>2021-01-29T02:41:44+08:00</published><updated>2021-01-29T02:41:44+08:00</updated><id>http://localhost:4000/blog/Welcome-to-My-Site</id><content type="html" xml:base="http://localhost:4000/blog/Welcome-to-My-Site/">&lt;h1 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to My Blog&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/Profile.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 

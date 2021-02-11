@@ -18,9 +18,9 @@ bio: Currently a Nobody QAQ
 about: false
 # use br tag for new line <br> and &\emsp for ｀Chinese space
 aboutyou: "Nobody QAQ"
-portraits: /assets/Profile.jpg
+portraits: /assets/img/Profile.jpg
 honorificPrefix: '***'
-image: /assets/Profile.jpg
+image: /assets/img/Profile.jpg
 familyname: Chiang
 honorificSuffix: 'ouo'
 disambiguatingDescription: '*'
